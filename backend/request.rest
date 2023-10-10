@@ -1,0 +1,230 @@
+###
+// Add user
+POST http://localhost:5000/users
+Content-Type:  application/json
+
+{
+    "name":"Sukoco",
+    "phone_number":"082298473231",
+    "email":"mitra@gmail.com",
+    "password": "123456",
+    "confirmpassword":"123456",
+    "role":"mitra"
+}
+### 
+// Get all user 
+GET http://localhost:5000/users
+
+###
+// Get user by id
+GET http://localhost:5000/users/161b5234-aa8e-441b-a49c-84e8b0b258e7
+
+###
+### //Update user 
+PATCH http://localhost:5000/users/161b5234-aa8e-441b-a49c-84e8b0b258e7
+Content-Type: application/json
+
+{
+    "name":"Bima UPDATEd",
+    "phone_number":"082298473231",
+    "email":"admin@gmail.com",
+    "password": "123456",
+    "confirmpassword":"123456",
+    "role":"admin"
+}
+###
+// Delete user
+DELETE http://localhost:5000/users/5f0810a2-6a70-403d-bce8-daf32a0ed161
+###
+// Add user
+POST http://localhost:5000/users
+Content-Type:  application/json
+{
+    "name":"Sukoco",
+    "phone_number":"082298473231",
+    "email":"user@gmail.com",
+    "password": "123456",
+    "confirmpassword":"123456",
+    "role":"user"
+}
+
+##################################################################################################
+###
+// Login as admin
+POST http://localhost:5000/login
+Content-Type:  application/json
+
+{
+    "email":"admin@gmail.com",
+    "password": "123456"
+}
+###
+// Login as karyawan
+POST http://localhost:5000/login
+Content-Type:  application/json
+
+{
+    "email":"mitra@gmail.com",
+    "password": "123456"
+}
+###
+//Get User Data
+GET http://localhost:5000/me
+###
+//Logout
+DELETE http://localhost:5000/logout
+
+#################################################################################################
+###
+//get all Location
+GET http://localhost:5000/locations
+
+###
+//get Location by id
+DELETE  http://localhost:5000/locations/
+
+#################################################################################################
+###
+//Get amenites
+GET http://localhost:5000/amenities/40799994-0b49-4d93-9ee8-99d9bbef16d0
+###
+//Get amenites by id
+GET http://localhost:5000/amenities/40799994-0b49-4d93-9ee8-99d9bbef16d0/5
+###
+//Post amenites 
+POST http://localhost:5000/amenities/40799994-0b49-4d93-9ee8-99d9bbef16d0
+Content-Type:  application/json
+
+{
+    "amenity":"Kolam Renang"
+}
+###
+//Update amenites by id
+PATCH  http://localhost:5000/amenities/40799994-0b49-4d93-9ee8-99d9bbef16d0/4
+Content-Type:  application/json
+
+{
+    "amenity":"Korban 911 UPDATED"
+}
+###
+//Delete amenites by id
+DELETE http://localhost:5000/amenities/40799994-0b49-4d93-9ee8-99d9bbef16d0/7
+
+################################################################################################
+###
+//Get all NearbyFacility
+GET http://localhost:5000/nearbyfacility/40799994-0b49-4d93-9ee8-99d9bbef16d0
+###
+//Get NearbyFacility by id
+GET http://localhost:5000/nearbyfacility/40799994-0b49-4d93-9ee8-99d9bbef16d0/1
+###
+//Post NearbyFacility
+POST http://localhost:5000/nearbyfacility/40799994-0b49-4d93-9ee8-99d9bbef16d0
+Content-Type:  application/json
+
+{
+    "category":"Taxi",
+    "name":"Gojek",
+    "range": 400,
+    "meter": "M"
+}
+###
+//Update NearbyFacility by id
+PATCH http://localhost:5000/nearbyfacility/40799994-0b49-4d93-9ee8-99d9bbef16d0/3
+Content-Type:  application/json
+
+{
+    "category":"Taxi Updated",
+    "name":"Gojek",
+    "range": 400,
+    "meter": "M"
+}
+
+###
+//Delete NearbyFacility by id
+DELETE http://localhost:5000/nearbyfacility/40799994-0b49-4d93-9ee8-99d9bbef16d0/2
+
+################################################################################################
+###
+//Post planpricing
+POST http://localhost:5000/planpricing/40799994-0b49-4d93-9ee8-99d9bbef16d0
+Content-Type:  application/json
+
+{
+    "name":"Premium +++",
+    "description": "Premium Plan",
+    "price": 10000000,
+    "pax": "pax/month"
+}
+###
+//Get planpricing
+GET http://localhost:5000/planpricing/40799994-0b49-4d93-9ee8-99d9bbef16d0
+###
+//Get planpricing by id
+GET http://localhost:5000/planpricing/40799994-0b49-4d93-9ee8-99d9bbef16d0/2
+###
+//Update planpricing by id
+PATCH http://localhost:5000/planpricing/40799994-0b49-4d93-9ee8-99d9bbef16d0/2
+Content-Type:  application/json
+
+{
+    "name":"Premium +++ UPDATED",
+    "description": "Premium Plan",
+    "price": 10000000,
+    "pax": "pax/month"
+}
+###
+//Delete planpricing by id
+DELETE http://localhost:5000/planpricing/40799994-0b49-4d93-9ee8-99d9bbef16d0/2
+
+################################################################################################
+###
+//get order
+GET http://localhost:5000/orders
+
+###
+//get order by id
+GET http://localhost:5000/orders/2
+
+###
+//post order
+POST http://localhost:5000/orders/86eb4cc8-92cb-4d2c-ad33-ca333397cc2f
+Content-Type:  application/json
+
+{
+    "name":"Bima Adhitya Sukoco",
+    "email":"bima.sukoco17@gmail.com",
+    "phone_number":"082298473231",
+    "bookplan": "premium",
+    "capacity": "1 - 9 orang",
+    "contactby": "email"
+}
+
+###
+//Patch order by id
+PATCH http://localhost:5000/orders/1
+Content-Type: application/json
+
+{
+    "name":"Bima Adhitya Sukoco UPDATED",
+    "email":"bima.sukoco17@gmail.com",
+    "phone_number":"082298473231",
+    "bookplan": "premium",
+    "capacity": "1 - 9 orang",
+    "contactby": "email"
+}
+
+###
+//Delete order by id
+DELETE http://localhost:5000/orders/1
+
+################################################################################################
+###
+//get all usecase
+GET http://localhost:5000/usecases/86eb4cc8-92cb-4d2c-ad33-ca333397cc2f
+
+###
+//get usecase by id
+GET http://localhost:5000/usecases/86eb4cc8-92cb-4d2c-ad33-ca333397cc2f/1
+
+
